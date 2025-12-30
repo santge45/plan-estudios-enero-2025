@@ -5,8 +5,7 @@ Plan de organización para exámenes y trabajos del mes de enero.
 
 ## 🌐 Ver el Plan
 
-Puedes ver el plan de estudios interactivo aquí: [Ver Plan](https://santge.github.io/plan-estudios-enero-2025/)
-
+Puedes ver el plan de estudios interactivo aquí: [Ver Plan](https://santge45.github.io/plan-estudios-enero-2025/)
 
 ## 📋 Contenido
 
