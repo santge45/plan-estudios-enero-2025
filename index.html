@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Estudios - Enero 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .timeline {
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .asignatura {
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .asignatura-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .asignatura-nombre {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .fecha-examen {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .tareas {
+            background: #f7fafc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-left: 10px;
+        }
+        
+        .tarea {
+            background: white;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #48bb78;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .tarea.urgente {
+            border-left-color: #f56565;
+        }
+        
+        .tarea.medio {
+            border-left-color: #ed8936;
+        }
+        
+        .tarea-icon {
+            font-size: 1.2em;
+            min-width: 25px;
+        }
+        
+        .tarea-contenido {
+            flex: 1;
+        }
+        
+        .tarea-titulo {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .tarea-detalle {
+            color: #718096;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .calendario {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 15px;
+        }
+        
+        .dia {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .dia.examen {
+            background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .dia.entrega {
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .dia-numero {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        
+        .dia-evento {
+            font-size: 0.8em;
+        }
+        
+        .resumen {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .resumen-card {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .resumen-numero {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .resumen-texto {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .prioridades {
+            background: #fff5f5;
+            border: 2px solid #fc8181;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .prioridades h2 {
+            color: #c53030;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .prioridad-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #f56565;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .calendario {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Plan de Estudios Enero 2025</h1>
+        <p class="subtitle">Organización de exámenes y trabajos</p>
+        
+        <div class="resumen">
+            <div class="resumen-card">
+                <div class="resumen-numero">6</div>
+                <div class="resumen-texto">Asignaturas</div>
+            </div>
+            <div class="resumen-card" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
+                <div class="resumen-numero">6</div>
+                <div class="resumen-texto">Exámenes</div>
+            </div>
+            <div class="resumen-card" style="background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);">
+                <div class="resumen-numero">5</div>
+                <div class="resumen-texto">Trabajos</div>
+            </div>
+        </div>
+        
+        <div class="prioridades">
+            <h2>🔥 Tareas Prioritarias AHORA (antes del 6 de enero)</h2>
+            <div class="prioridad-item">
+                <strong>1. SIP - Trabajo MRP y PAP</strong> (Entrega: 7 enero)
+                <div style="margin-top: 5px; color: #718096;">Hacer MRP de 2 productos, PAP y pasar layout a PDF. ¡Úsalo para estudiar el examen!</div>
+            </div>
+            <div class="prioridad-item">
+                <strong>2. PRL - Lectura de teoría</strong> (Examen: 13 enero)
+                <div style="margin-top: 5px; color: #718096;">3 horas de lectura + 1 hora practicando examen del año pasado</div>
+            </div>
+            <div class="prioridad-item">
+                <strong>3. Administración - Trabajo</strong> (Entrega: 9 enero)
+                <div style="margin-top: 5px; color: #718096;">3 horas usando modelo del año pasado</div>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <div class="asignatura">
+                <div class="asignatura-header">
+                    <span class="asignatura-nombre">📘 SIP (Sistemas Integrados de Producción)</span>
+                    <span class="fecha-examen">📅 Examen: 22 Enero</span>
+                </div>
+                <div class="tareas">
+                    <div class="tarea urgente">
+                        <span class="tarea-icon">🚨</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Trabajo MRP y PAP - ENTREGA: 7 Enero</div>
+                            <div class="tarea-detalle">
+                                • MRP de 2 productos<br>
+                                • PAP (Plan Agregado de Producción)<br>
+                                • Pasar layout a PDF<br>
+                                <strong>✅ Hazlo YA: te sirve para estudiar el examen</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarea">
+                        <span class="tarea-icon">📚</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Estudio para examen (8-21 Enero)</div>
+                            <div class="tarea-detalle">
+                                • 2 tardes de estudio<br>
+                                • 3 horas de vídeos de YouTube<br>
+                                • Resolver 10 problemas del campus virtual
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="asignatura">
+                <div class="asignatura-header" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
+                    <span class="asignatura-nombre">📗 Administración y Gestión de Empresa</span>
+                    <span class="fecha-examen">📅 Examen: 19 Enero</span>
+                </div>
+                <div class="tareas">
+                    <div class="tarea urgente">
+                        <span class="tarea-icon">📝</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Trabajo - ENTREGA: 9 Enero</div>
+                            <div class="tarea-detalle">
+                                • 3 horas (tienes modelo del año pasado)<br>
+                                <strong>Hacer entre el 2-8 de enero</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarea">
+                        <span class="tarea-icon">📖</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Estudio para examen (11-12 y 18-19 Enero)</div>
+                            <div class="tarea-detalle">
+                                • Todo teoría: leer y memorizar todos los temas<br>
+                                <strong>Fin de semana del 11-12 y repasar 18-19</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="asignatura">
+                <div class="asignatura-header" style="background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);">
+                    <span class="asignatura-nombre">📙 PRL (Prevención de Riesgos Laborales)</span>
+                    <span class="fecha-examen">📅 Examen: 13 Enero</span>
+                </div>
+                <div class="tareas">
+                    <div class="tarea urgente">
+                        <span class="tarea-icon">📖</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Lectura de teoría (Hacer ANTES del 6 Enero)</div>
+                            <div class="tarea-detalle">
+                                • 3 horas de lectura de teoría<br>
+                                • Puedes hacerlo en cualquier momento
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarea medio">
+                        <span class="tarea-icon">✍️</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Práctica con examen del año pasado (6-12 Enero)</div>
+                            <div class="tarea-detalle">
+                                • 1 hora practicando<br>
+                                • Alta probabilidad de que repita examen
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="asignatura">
+                <div class="asignatura-header" style="background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);">
+                    <span class="asignatura-nombre">📕 Tecnología Química</span>
+                    <span class="fecha-examen">📅 Examen: 14 Enero</span>
+                </div>
+                <div class="tareas">
+                    <div class="tarea medio">
+                        <span class="tarea-icon">📝</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Trabajo - Finales de Enero</div>
+                            <div class="tarea-detalle">
+                                • Añadir 4 apartados con IA (máx. 1 hora)<br>
+                                • Usar trabajo del año pasado<br>
+                                <strong>Acabarlo el 6 Enero mientras estudias con Santi</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarea">
+                        <span class="tarea-icon">👥</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Estudio con Santi (6 Enero)</div>
+                            <div class="tarea-detalle">
+                                • 1 tarde con Santi (a partir del 6 Enero)<br>
+                                • Estudiar para examen del día 14
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="asignatura">
+                <div class="asignatura-header" style="background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);">
+                    <span class="asignatura-nombre">📔 Tecnología de Máquinas</span>
+                    <span class="fecha-examen">📅 Examen: 28 Enero (MÁS DIFÍCIL)</span>
+                </div>
+                <div class="tareas">
+                    <div class="tarea">
+                        <span class="tarea-icon">📄</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Entregas de trabajos (15-20 Enero)</div>
+                            <div class="tarea-detalle">
+                                • Pasar 2 trabajos a PDF (ya hechos)<br>
+                                • Práctica de equilibrado de rotores (sin hacer)<br>
+                                • Problema de vibraciones n-grados libertad<br>
+                                <strong>Hacer mientras estudias para el examen</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarea medio">
+                        <span class="tarea-icon">👥</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Estudio con Santi (15-25 Enero)</div>
+                            <div class="tarea-detalle">
+                                • 1 tarde: explicación teoría de Lagrange<br>
+                                • 1 tarde: hacer problemas juntos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tarea">
+                        <span class="tarea-icon">📚</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Estudio individual (15-27 Enero)</div>
+                            <div class="tarea-detalle">
+                                • Practicar problemas resueltos sola<br>
+                                <strong>ASIGNATURA MÁS COMPLICADA - Centrarse en aprobar</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="asignatura">
+                <div class="asignatura-header" style="background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);">
+                    <span class="asignatura-nombre">⚡ Tecnología Eléctrica</span>
+                    <span class="fecha-examen">📅 Examen: 30 Enero</span>
+                </div>
+                <div class="tareas">
+                    <div class="tarea">
+                        <span class="tarea-icon">👥</span>
+                        <div class="tarea-contenido">
+                            <div class="tarea-titulo">Estudio con Santi (27-29 Enero)</div>
+                            <div class="tarea-detalle">
+                                • 2 tardes con Santi<br>
+                                • Santi empieza a estudiarla el 27<br>
+                                • No hay trabajo<br>
+                                <strong>NO estudiar hasta el 27 de Enero</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="color: #2d3748; margin: 30px 0 20px 0; text-align: center;">📅 Calendario de Eventos Clave</h2>
+        <div class="calendario">
+            <div class="dia entrega">
+                <div class="dia-numero">7</div>
+                <div class="dia-evento">Entrega SIP</div>
+            </div>
+            <div class="dia entrega">
+                <div class="dia-numero">9</div>
+                <div class="dia-evento">Entrega Admin</div>
+            </div>
+            <div class="dia examen">
+                <div class="dia-numero">13</div>
+                <div class="dia-evento">Examen PRL</div>
+            </div>
+            <div class="dia examen">
+                <div class="dia-numero">14</div>
+                <div class="dia-evento">Examen Tec. Química</div>
+            </div>
+            <div class="dia examen">
+                <div class="dia-numero">19</div>
+                <div class="dia-evento">Examen Admin</div>
+            </div>
+            <div class="dia examen">
+                <div class="dia-numero">22</div>
+                <div class="dia-evento">Examen SIP</div>
+            </div>
+            <div class="dia examen">
+                <div class="dia-numero">28</div>
+                <div class="dia-evento">Examen Tec. Máq.</div>
+            </div>
+            <div class="dia examen">
+                <div class="dia-numero">30</div>
+                <div class="dia-evento">Examen Tec. Eléc.</div>
+            </div>
+        </div>
+        
+        <div style="background: #edf2f7; padding: 20px; border-radius: 15px; margin-top: 30px;">
+            <h3 style="color: #2d3748; margin-bottom: 15px;">💡 Recomendaciones:</h3>
+            <ul style="color: #4a5568; line-height: 2; margin-left: 20px;">
+                <li><strong>Hasta el 6 de Enero:</strong> Completar trabajo SIP, lectura PRL y trabajo Administración</li>
+                <li><strong>6 de Enero:</strong> Estudiar Tec. Química con Santi + acabar trabajo</li>
+                <li><strong>7-12 Enero:</strong> Practicar PRL y repasar para examen</li>
+                <li><strong>13-14 Enero:</strong> Exámenes PRL y Tec. Química</li>
+                <li><strong>15-21 Enero:</strong> Estudiar SIP (2 tardes) + empezar Tec. Máquinas con Santi</li>
+                <li><strong>22-27 Enero:</strong> Continuar Tec. Máquinas (práctica individual intensiva)</li>
+                <li><strong>27-29 Enero:</strong> Estudiar Tec. Eléctrica con Santi (2 tardes)</li>
+                <li><strong>28-30 Enero:</strong> Últimos exámenes (Tec. Máquinas y Tec. Eléctrica)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
