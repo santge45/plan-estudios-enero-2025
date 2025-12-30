@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRL - Prevención de Riesgos Laborales</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #ed8936;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #dd6b20;
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .fecha-limite {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 15px;
+            border-left: 5px solid #ed8936;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            color: #4a5568;
+            line-height: 2;
+        }
+        
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .checklist {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        .checklist-item:hover {
+            background: #edf2f7;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .tip {
+            background: #c6f6d5;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .tip strong {
+            color: #22543d;
+        }
+        
+        .warning {
+            background: #fefcbf;
+            border-left: 4px solid #ecc94b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning strong {
+            color: #744210;
+        }
+        
+        .tiempo-estimado {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .tiempo-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .tiempo-numero {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ed8936;
+            margin-bottom: 5px;
+        }
+        
+        .tema {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #ed8936;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver al Plan Principal</a>
+        
+        <h1>📗 PRL - Prevención de Riesgos Laborales</h1>
+        
+        <div class="fecha-limite">
+            🚨 FECHA EXAMEN: 13 de Enero de 2025
+        </div>
+        
+        <div class="section">
+            <h2>📋 Descripción de la Asignatura</h2>
+            <p style="color: #4a5568; line-height: 1.8;">
+                PRL es una asignatura principalmente teórica. La estrategia es simple: leer toda la teoría 
+                y practicar con el examen del año pasado, ya que hay alta probabilidad de que el examen repita.
+            </p>
+        </div>
+        
+        <div class="tip">
+            <strong>💡 Ventaja:</strong> Puedes estudiar esta asignatura en cualquier momento, no necesitas 
+            coordinarte con nadie. Es ideal para aprovechar ratos libres antes del 6 de enero.
+        </div>
+        
+        <div class="section">
+            <h2>⏱️ Tiempo Estimado Total</h2>
+            <div class="tiempo-estimado">
+                <div class="tiempo-card">
+                    <div class="tiempo-numero">3h</div>
+                    <div style="color: #718096;">Lectura de teoría</div>
+                </div>
+                <div class="tiempo-card">
+                    <div class="tiempo-numero">1h</div>
+                    <div style="color: #718096;">Práctica examen</div>
+                </div>
+                <div class="tiempo-card">
+                    <div class="tiempo-numero">4h</div>
+                    <div style="color: #718096;">TOTAL</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Plan de Estudio</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="task1">
+                    <label for="task1"><strong>Fase 1:</strong> Lectura completa de toda la teoría (3 horas)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task2">
+                    <label for="task2"><strong>Fase 2:</strong> Descargar examen del año pasado</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task3">
+                    <label for="task3"><strong>Fase 3:</strong> Resolver examen del año pasado (1 hora)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task4">
+                    <label for="task4"><strong>Fase 4:</strong> Comprobar respuestas y repasar dudas</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task5">
+                    <label for="task5"><strong>Fase 5:</strong> Repaso rápido el día antes del examen (12 enero)</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📚 Temas a Estudiar</h2>
+            <p style="color: #4a5568; margin-bottom: 15px;">Los temas principales de PRL suelen incluir:</p>
+            <div class="tema">
+                <strong>Tema 1:</strong> Conceptos básicos sobre seguridad y salud en el trabajo
+            </div>
+            <div class="tema">
+                <strong>Tema 2:</strong> Riesgos generales y su prevención
+            </div>
+            <div class="tema">
+                <strong>Tema 3:</strong> Riesgos específicos y su prevención en el sector
+            </div>
+            <div class="tema">
+                <strong>Tema 4:</strong> Elementos básicos de gestión de la prevención
+            </div>
+            <div class="tema">
+                <strong>Tema 5:</strong> Organismos públicos relacionados con la seguridad y salud
+            </div>
+            <div class="tema">
+                <strong>Tema 6:</strong> Organización del trabajo preventivo
+            </div>
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ Importante:</strong> Aunque es teoría, no subestimes el volumen de lectura. 
+            Son 3 horas continuas, así que busca un momento en el que estés despejado/a y sin interrupciones.
+        </div>
+        
+        <div class="section">
+            <h2>📅 Calendario Recomendado</h2>
+            <ul>
+                <li><strong>Antes del 3 de enero:</strong> Lectura completa de teoría (3 horas) - Puedes hacerlo en una tarde o repartirlo en 2 días</li>
+                <li><strong>4-5 de enero:</strong> Hacer el examen del año pasado sin mirar apuntes (1 hora)</li>
+                <li><strong>6-12 de enero:</strong> Comprobar respuestas y repasar los temas que fallaste</li>
+                <li><strong>12 de enero (tarde):</strong> Repaso rápido final</li>
+                <li><strong>13 de enero:</strong> ¡DÍA DEL EXAMEN! 🎯</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <strong>🎯 Estrategia Clave:</strong> Si el examen del año pasado repite (como suele pasar), 
+            memoriza bien las respuestas correctas. Esto puede ser la diferencia entre aprobar con facilidad o tener dudas.
+        </div>
+        
+        <div class="section">
+            <h2>💡 Consejos para la Lectura</h2>
+            <ul>
+                <li><strong>Toma notas:</strong> Escribe conceptos clave en una hoja aparte mientras lees</li>
+                <li><strong>Subraya:</strong> Marca definiciones importantes y datos relevantes</li>
+                <li><strong>Resume:</strong> Al final de cada tema, escribe un resumen de 3-4 líneas</li>
+                <li><strong>No memorices:</strong> En la primera lectura, solo comprende; memorizarás con la práctica</li>
+                <li><strong>Elimina distracciones:</strong> Apaga el móvil durante las 3 horas de lectura</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🎓 Cómo Usar el Examen del Año Pasado</h2>
+            <ul>
+                <li><strong>Paso 1:</strong> Hazlo como si fuera el examen real, con tiempo limitado</li>
+                <li><strong>Paso 2:</strong> No mires los apuntes mientras lo haces</li>
+                <li><strong>Paso 3:</strong> Marca las preguntas de las que no estás seguro/a</li>
+                <li><strong>Paso 4:</strong> Comprueba las respuestas con los apuntes</li>
+                <li><strong>Paso 5:</strong> Estudia en profundidad los temas que fallaste</li>
+                <li><strong>Paso 6:</strong> Vuelve a hacer las preguntas que fallaste sin mirar</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <strong>✅ Ventaja de PRL:</strong> Es la primera asignatura que terminarás de estudiar, 
+            lo que te dará confianza y momentum para las siguientes. ¡Empieza fuerte!
+        </div>
+        
+        <a href="index.html" class="back-button" style="margin-top: 30px; display: inline-block;">← Volver al Plan Principal</a>
+    </div>
+</body>
+</html>

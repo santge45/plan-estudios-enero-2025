@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP - Trabajo MRP y PAP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #5568d3;
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .fecha-limite {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            color: #4a5568;
+            line-height: 2;
+        }
+        
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .checklist {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        .checklist-item:hover {
+            background: #edf2f7;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .tip {
+            background: #c6f6d5;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .tip strong {
+            color: #22543d;
+        }
+        
+        .warning {
+            background: #fefcbf;
+            border-left: 4px solid #ecc94b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning strong {
+            color: #744210;
+        }
+        
+        .recursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .recurso {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .recurso-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver al Plan Principal</a>
+        
+        <h1>📘 SIP - Trabajo MRP y PAP</h1>
+        
+        <div class="fecha-limite">
+            🚨 FECHA LÍMITE: 7 de Enero de 2025
+        </div>
+        
+        <div class="section">
+            <h2>📋 Descripción del Trabajo</h2>
+            <p style="color: #4a5568; line-height: 1.8;">
+                Este trabajo consiste en realizar el MRP (Material Requirements Planning) de 2 productos, 
+                el PAP (Plan Agregado de Producción) y pasar el layout a PDF. Es fundamental hacerlo 
+                cuanto antes porque te servirá como material de estudio para el examen del 22 de enero.
+            </p>
+        </div>
+        
+        <div class="tip">
+            <strong>💡 Consejo Importante:</strong> Este trabajo NO es solo una entrega, es tu mejor herramienta 
+            de estudio para el examen. Al hacerlo, estarás practicando exactamente lo que te va a caer en el examen.
+        </div>
+        
+        <div class="section">
+            <h2>✅ Tareas a Completar</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="task1">
+                    <label for="task1"><strong>MRP del Producto 1:</strong> Planificación de requerimientos de materiales</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task2">
+                    <label for="task2"><strong>MRP del Producto 2:</strong> Planificación de requerimientos de materiales</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task3">
+                    <label for="task3"><strong>PAP:</strong> Plan Agregado de Producción</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task4">
+                    <label for="task4"><strong>Layout:</strong> Pasar el layout a formato PDF</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task5">
+                    <label for="task5"><strong>Revisión final:</strong> Comprobar que todo esté correcto antes de entregar</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Pasos para Realizar el MRP</h2>
+            <ul>
+                <li><strong>Paso 1:</strong> Recopilar la información necesaria (BOM - Bill of Materials, lead times, inventarios)</li>
+                <li><strong>Paso 2:</strong> Identificar la demanda independiente de cada producto</li>
+                <li><strong>Paso 3:</strong> Calcular los requerimientos brutos para cada nivel del BOM</li>
+                <li><strong>Paso 4:</strong> Calcular los requerimientos netos (restando inventario disponible)</li>
+                <li><strong>Paso 5:</strong> Determinar las fechas de lanzamiento de órdenes considerando los lead times</li>
+                <li><strong>Paso 6:</strong> Crear las tablas MRP para cada componente</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Pasos para Realizar el PAP</h2>
+            <ul>
+                <li><strong>Paso 1:</strong> Agregar la demanda de los productos en unidades equivalentes</li>
+                <li><strong>Paso 2:</strong> Evaluar las diferentes estrategias de producción (nivelada, persecución, mixta)</li>
+                <li><strong>Paso 3:</strong> Calcular costos de cada estrategia (producción, inventario, subcontratación, horas extra)</li>
+                <li><strong>Paso 4:</strong> Seleccionar la estrategia más económica</li>
+                <li><strong>Paso 5:</strong> Desarrollar el plan detallado período a período</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🛠️ Recursos Necesarios</h2>
+            <div class="recursos">
+                <div class="recurso">
+                    <div class="recurso-icon">💻</div>
+                    <strong>Excel/Calc</strong>
+                    <p style="color: #718096; font-size: 0.9em;">Para tablas MRP</p>
+                </div>
+                <div class="recurso">
+                    <div class="recurso-icon">📚</div>
+                    <strong>Apuntes</strong>
+                    <p style="color: #718096; font-size: 0.9em;">Teoría de SIP</p>
+                </div>
+                <div class="recurso">
+                    <div class="recurso-icon">🎥</div>
+                    <strong>Campus Virtual</strong>
+                    <p style="color: #718096; font-size: 0.9em;">Ejemplos resueltos</p>
+                </div>
+                <div class="recurso">
+                    <div class="recurso-icon">📄</div>
+                    <strong>PDF Converter</strong>
+                    <p style="color: #718096; font-size: 0.9em;">Para el layout</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ Atención:</strong> No dejes este trabajo para última hora. Hacerlo bien te ahorrará 
+            horas de estudio después porque ya habrás practicado todo lo necesario para el examen.
+        </div>
+        
+        <div class="section">
+            <h2>📅 Planificación Recomendada</h2>
+            <ul>
+                <li><strong>Día 1-2 (antes del 3 de enero):</strong> MRP de los 2 productos (2-3 horas)</li>
+                <li><strong>Día 3-4 (3-4 de enero):</strong> Realizar el PAP (1-2 horas)</li>
+                <li><strong>Día 5 (5 de enero):</strong> Pasar layout a PDF y revisión final (1 hora)</li>
+                <li><strong>Día 6 (6 de enero):</strong> Entregar con margen de seguridad</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <strong>🎓 Ventaja Extra:</strong> Al terminar este trabajo, ya tendrás dominado el 60% del 
+            contenido del examen del 22 de enero. Solo necesitarás ver los vídeos de YouTube y hacer 
+            los 10 problemas del campus para estar completamente preparado/a.
+        </div>
+        
+        <div class="section">
+            <h2>🔗 Conexión con el Examen del 22 de Enero</h2>
+            <p style="color: #4a5568; line-height: 1.8; margin-bottom: 15px;">
+                Después de hacer este trabajo, para preparar el examen necesitarás:
+            </p>
+            <ul>
+                <li>Ver 3 horas de vídeos de YouTube sobre SIP</li>
+                <li>Resolver 10 problemas del campus virtual</li>
+                <li>Repasar tu propio trabajo (¡ya lo tendrás hecho!)</li>
+            </ul>
+            <p style="color: #4a5568; line-height: 1.8; margin-top: 15px;">
+                Total: 2 tardes de estudio adicionales entre el 8 y el 21 de enero.
+            </p>
+        </div>
+        
+        <a href="index.html" class="back-button" style="margin-top: 30px; display: inline-block;">← Volver al Plan Principal</a>
+    </div>
+</body>
+</html>

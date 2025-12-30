@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Trabajo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #38a169;
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .fecha-limite {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 15px;
+            border-left: 5px solid #48bb78;
+        }
+        
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section ul {
+            margin-left: 20px;
+            color: #4a5568;
+            line-height: 2;
+        }
+        
+        .section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .checklist {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        .checklist-item:hover {
+            background: #edf2f7;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .tip {
+            background: #c6f6d5;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .tip strong {
+            color: #22543d;
+        }
+        
+        .warning {
+            background: #fefcbf;
+            border-left: 4px solid #ecc94b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning strong {
+            color: #744210;
+        }
+        
+        .tiempo-estimado {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .tiempo-card {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tiempo-numero {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .paso {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #48bb78;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .paso-numero {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Volver al Plan Principal</a>
+        
+        <h1>📘 Administración y Gestión de Empresa - Trabajo</h1>
+        
+        <div class="fecha-limite">
+            🚨 FECHA LÍMITE: 9 de Enero de 2025
+        </div>
+        
+        <div class="section">
+            <h2>📋 Descripción del Trabajo</h2>
+            <p style="color: #4a5568; line-height: 1.8;">
+                Este trabajo consiste en realizar un proyecto de gestión empresarial. La buena noticia es 
+                que tienes un modelo del año pasado que puedes usar como referencia, lo que te facilitará 
+                mucho el trabajo.
+            </p>
+        </div>
+        
+        <div class="tiempo-estimado">
+            <div class="tiempo-card">
+                <div class="tiempo-numero">3h</div>
+                <div style="font-size: 1.2em;">Tiempo Total Estimado</div>
+                <div style="margin-top: 10px; opacity: 0.9;">Con modelo de referencia</div>
+            </div>
+        </div>
+        
+        <div class="tip">
+            <strong>💡 Ventaja:</strong> Tienes un trabajo modelo del año pasado. Esto significa que sabes 
+            exactamente qué estructura seguir y qué contenido incluir. Solo necesitas adaptarlo.
+        </div>
+        
+        <div class="section">
+            <h2>✅ Checklist del Trabajo</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="task1">
+                    <label for="task1"><strong>Preparación:</strong> Revisar el modelo del año pasado completo</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task2">
+                    <label for="task2"><strong>Paso 1:</strong> Identificar las secciones del trabajo</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task3">
+                    <label for="task3"><strong>Paso 2:</strong> Adaptar cada sección con tu información</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task4">
+                    <label for="task4"><strong>Paso 3:</strong> Revisar ortografía y formato</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task5">
+                    <label for="task5"><strong>Paso 4:</strong> Comprobar requisitos de entrega</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="task6">
+                    <label for="task6"><strong>Final:</strong> Subir al campus virtual antes del 9 de enero</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Estrategia de Ejecución</h2>
+            
+            <div class="paso">
+                <span class="paso-numero">1</span>
+                <strong>Análisis del Modelo (30 min)</strong>
+                <p style="color: #718096; margin-top: 10px;">
+                    Lee el trabajo del año pasado de principio a fin. Entiende la estructura, el tipo de 
+                    contenido en cada sección y el nivel de profundidad requerido.
+                </p>
+            </div>
+            
+            <div class="paso">
+                <span class="paso-numero">2</span>
+                <strong>Planificación (15 min)</strong>
+                <p style="color: #718096; margin-top: 10px;">
+                    Haz una lista de las secciones y qué necesitas cambiar en cada una. Recopila la 
+                    información o datos que necesitarás.
+                </p>
+            </div>
+            
+            <div class="paso">
+                <span class="paso-numero">3</span>
+                <strong>Desarrollo del Contenido (1h 45min)</strong>
+                <p style="color: #718096; margin-top: 10px;">
+                    Trabaja sección por sección. No intentes hacerlo perfecto a la primera, el objetivo 
+                    es completar todo el contenido.
+                </p>
+            </div>
+            
+            <div class="paso">
+                <span class="paso-numero">4</span>
+                <strong>Revisión y Formato (30 min)</strong>
+                <p style="color: #718096; margin-top: 10px;">
+                    Revisa ortografía, gramática y formato. Asegúrate de que las tablas, gráficos e 
+                    imágenes estén bien insertadas y sean legibles.
+                </p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📚 Secciones Típicas del Trabajo</h2>
+            <ul>
+                <li><strong>Introducción:</strong> Presentación de la empresa o proyecto</li>
+                <li><strong>Análisis del Entorno:</strong> DAFO, PESTEL o similar</li>
+                <li><strong>Análisis Interno:</strong> Estructura organizativa, recursos</li>
+                <li><strong>Estrategia Empresarial:</strong> Objetivos, estrategias, acciones</li>
+                <li><strong>Plan Financiero:</strong> Presupuesto, cuenta de resultados, ratios</li>
+                <li><strong>Conclusiones:</strong> Viabilidad y recomendaciones</li>
+            </ul>
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ Evita el Plagio:</strong> Aunque uses el modelo como referencia, asegúrate de escribir 
+            con tus propias palabras y usar datos diferentes. Los profesores tienen herramientas antiplagio.
+        </div>
+        
+        <div class="section">
+            <h2>📅 Calendario Recomendado</h2>
+            <ul>
+                <li><strong>2-3 de enero:</strong> Análisis del modelo y planificación</li>
+                <li><strong>4-5 de enero:</strong> Desarrollo del contenido principal (secciones 1-3)</li>
+                <li><strong>6-7 de enero:</strong> Desarrollo del contenido final (secciones 4-6)</li>
+                <li><strong>8 de enero:</strong> Revisión, formato y correcciones</li>
+                <li><strong>9 de enero (mañana):</strong> Entrega con margen de seguridad</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <strong>🎓 Consejo Pro:</strong> Trabaja en sesiones de 50 minutos con 10 minutos de descanso. 
+            Es más productivo que intentar hacerlo todo de una vez.
+        </div>
+        
+        <div class="section">
+            <h2>🛠️ Herramientas Necesarias</h2>
+            <ul>
+                <li><strong>Word/Google Docs:</strong> Para redactar el trabajo</li>
+                <li><strong>Excel/Google Sheets:</strong> Para tablas financieras (si aplica)</li>
+                <li><strong>Canva/PowerPoint:</strong> Para gráficos y esquemas visuales</li>
+                <li><strong>Corrector ortográfico:</strong> Grammarly, LanguageTool o similar</li>
+                <li><strong>Conversor a PDF:</strong> Para la entrega final</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>✨ Checklist Pre-Entrega</h2>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="pre1">
+                    <label for="pre1">¿Todas las secciones están completas?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pre2">
+                    <label for="pre2">¿Has revisado ortografía y gramática?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pre3">
+                    <label for="pre3">¿Las tablas y gráficos son legibles?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pre4">
+                    <label for="pre4">¿Tiene portada con tu nombre y asignatura?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pre5">
+                    <label for="pre5">¿Está en formato PDF?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pre6">
+                    <label for="pre6">¿Has comprobado el tamaño del archivo?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="pre7">
+                    <label for="pre7">¿Tienes una copia de seguridad?</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 Relación con el Examen del 19 de Enero</h2>
+            <p style="color: #4a5568; line-height: 1.8;">
+                Aunque este trabajo no está directamente relacionado con el examen, hacerlo te ayudará a 
+                familiarizarte con los conceptos de la asignatura. Para el examen necesitarás:
+            </p>
+            <ul style="margin-top: 10px;">
+                <li>Leer y memorizar todos los temas (todo teoría)</li>
+                <li>Estudiar el fin de semana del 11-12 de enero</li>
+                <li>Repasar el 18-19 de enero antes del examen</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <strong>💪 Motivación:</strong> Este será uno de los primeros trabajos que entregarás. Hacerlo 
+            bien y a tiempo te dará confianza para afrontar las siguientes entregas y exámenes.
+        </div>
+        
+        <a href="index.html" class="back-button" style="margin-top: 30px; display: inline-block;">← Volver al Plan Principal</a>
+    </div>
+</body>
+</html>
